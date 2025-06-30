@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="/style/minty.css">
+</head>
+
+<body id="body">
+    <nav class="mb-1 navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">Mila Kids</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active">Accion
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Accion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Accion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Accion</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-sm-2" type="search" placeholder="Busqueda">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Busqueda</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--<div style="display: flex; flex-wrap: nowrap; border-color: blue;">-->
+    <!--<div class="container text-center">-->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- ********************************************************* LEFT **********************************************************-->
+            <div class="col">
+                <div class="container-fluid mt-2">
+                    <label for="input-file" class="form-label mt-1">Subir Inventario</label>
+                    <input class="form-control" type="file" id="input-file">
+                </div>
+                <div class="container-fluid mt-2">
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-info mt-1" id="button-uploadfile">Subir</button>
+                    </div>
+                </div>
+
+
+                <div class="container-fluid mt-0">
+                    <label class="col-form-label mt-0" for="input-code">Codigo</label>
+                    <input type="text" class="form-control" placeholder="Codigo" id="input-code" data-column-name="code"
+                        data-table-stocks="stocks" data-column-stocks="fkcode" data-table-prices="prices"
+                        data-column-prices="fkcode">
+                </div>
+
+                <div class="container-fluid mt-0">
+                    <label class="col-form-label mt-1" for="input-productname">Item</label>
+                    <input type="text" class="form-control" placeholder="Item" id="input-productname"
+                        data-table-name="products" data-column-name="name">
+                </div>
+
+                <div class="container-fluid mt-0">
+                    <label class="col-form-label mt-1" for="input-stock">Cantidad</label>
+                    <input type="text" class="form-control" placeholder="Cantidad" id="input-stock"
+                        data-table-name="stocks" data-column-name="stock">
+                </div>
+
+                <div class="container-fluid mt-0">
+                    <label class="col-form-label mt-1" for="input-price">Precio</label>
+                    <input type="text" class="form-control" placeholder="Precio" id="input-price"
+                        data-table-name="prices" data-column-name="price">
+                </div>
+
+                <div class="container-fluid mt-2">
+                    <div class="btn-group mt-3" role="group" aria-label="Basic example">
+                        <button type="button" id="button-search" class="btn btn-success">Buscar</button>
+                        <button type="button" id="button-update" class="btn btn-warning">Modificar</button>
+                        <button type="button" id="button-save" class="btn btn-danger">Guardar</button>
+                        <button type="button" id="button-delete" class="btn btn-dark">Borrar</button>
+                    </div>
+                </div>
+                <div class="container-fluid mt-2">
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-info mt-1" id="button-downloadfile">Descargar</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <!-- ********************************************************* CENTER **********************************************************-->
+            <div class="col-6">
+
+                <div class="mb-1 form-floating">
+                    <input type="text" class="form-control" id="search-box" placeholder="Nombre del Producto"
+                        autocomplete="off">
+                    <label for="search-box">Nombre del producto</label>
+                </div>
+
+                <div class="table-avalible-product-container">
+                    <table class="table table-hover" id="available-table-products">
+                        <thead id="available-table-products-header">
+                            <tr>
+                                <th scope="col" style="width:5%;">CODIGO</th>
+                                <th scope="col" style="width:85%;">ARTICULO</th>
+                                <th scope="col" style="width:5%;">CANTIDAD</th>
+                                <th scope="col" style="width:5%;">VALOR</th>
+                            </tr>
+                        </thead>
+                        <tbody id="available-body-table-products">
+                        </tbody>
+
+                    </table>
+                </div>
+
+
+
+            </div>
+
+            <!-- *********************************************************  RIGHT **********************************************************-->
+            <div class="col">
+
+                <!--<div id="sale-container">Sale Container</div><br>-->
+
+                <!--align-middle text-center container-fluid-->
+
+                <div>Lista de ventas</div>
+
+
+                <div class="table-sales-product-container">
+                    <table class="table table-hover" id="sales-table-products">
+                        <thead class="class-sales-table-products-header" id="sales-table-products-header">
+                            <tr>
+                                <th scope="col" style="width:5%;">CODIGO</th>
+                                <th scope="col" style="width:80%;">ARTICULO</th>
+                                <th scope="col" style="width:15%;">VALOR</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sales-body-table-products">
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <span id="span-totalsale" class="lead">Total: </span><span id="span-totalsale" class="lead">$
+                    0,00</span>
+
+                <div class="container-fluid mt-2">
+                    <button id="button-saleclean" type="button" class="btn btn-danger">Borrar Articulos</button>
+                </div>
+                <div class="container-fluid mt-2">
+                    <button id="button-confirm" type="button" class="btn btn-success">Confirmar Venta</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="/index.js"></script>
+
+</body>
+
+</html>

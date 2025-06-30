@@ -1,0 +1,33 @@
+{
+  "name": "milakidsoft",
+  "version": "1.0.0",
+  "description": "Mila Kid Software for inventory",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "app": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoz-code/milaKidSoft.git"
+  },
+  "keywords": [
+    "inventory"
+  ],
+  "author": "hoz-code",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoz-code/milaKidSoft/issues"
+  },
+  "homepage": "https://github.com/hoz-code/milaKidSoft#readme",
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "express": "^5.1.0",
+    "multer": "^2.0.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
